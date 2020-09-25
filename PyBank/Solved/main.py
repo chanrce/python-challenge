@@ -24,6 +24,10 @@ with open(budget_data) as csvfile:
         months.append(row[0])
         profitlosses.append(row[1])
         totalprofitlosses += int(row[1])
+
+        #avgchanges.append(changes)
+        #changes = round(int(row[1])-int(row[5]),2)
+
        # subscribers.append(row[5])
         #reviews.append(row[6])
 
