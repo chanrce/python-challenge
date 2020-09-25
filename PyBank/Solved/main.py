@@ -15,6 +15,7 @@ profitdec = []
 #Open the budget data 
 with open(budget_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader)
 
     for row in csvreader:
         months.append(row[1])
