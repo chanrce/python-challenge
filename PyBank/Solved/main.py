@@ -12,14 +12,18 @@ avgchanges = []
 profitinc = []
 profitdec = []
 
+#make variables
+totalprofitlosses = 0
+
 #Open the budget data 
 with open(budget_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
 
     for row in csvreader:
-        months.append(row[1])
-        #price.append(row[4])
+        months.append(row[0])
+        profitlosses.append(row[1])
+        totalprofitlosses += int(row[1])
        # subscribers.append(row[5])
         #reviews.append(row[6])
 
@@ -28,7 +32,15 @@ with open(budget_data) as csvfile:
 
         #new_length = row[9].split(" ")
         #length.append(float(new_length[0]))
+
+#counting number of months
 print(str(len(months)))
+print(totalprofitlosses)
+
+#adding up the profits/losses
+
+
+
 
 #cleaned_csv = zip(title,price,subscribers,reviews,review_percent,length)
 #output_file = os.path.join("web_final.csv")
