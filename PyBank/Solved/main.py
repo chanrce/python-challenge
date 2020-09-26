@@ -16,7 +16,7 @@ change_from_previous = []
 
 #make variables
 totalprofitlosses = 0
-
+previous = 0
 
 
 #Open the budget data 
@@ -29,9 +29,12 @@ with open(budget_data) as csvfile:
         profitlosses.append(row[1])
         totalprofitlosses += int(row[1])
 
-        #nrevenue = next(int(row[1]))
-        #print(nrevenue)
-        
+        change = int(row[1]) - previous
+        change_from_previous.append(change)
+        previous = int(row[1])
+    
+    avgchange = sum(change_from_previous[1:])/(len(change_from_previous)-1)
+
         #changes = (int[profitlosses(row[1])]-int([profitlosses(next(row[1]))))
         #changes = round(int(row[1])-int(next(row[1]))
         #sumchanges += int(changes)
@@ -48,7 +51,7 @@ with open(budget_data) as csvfile:
 #counting number of months
 print(str(len(months)))
 print(totalprofitlosses)
-
+print(avgchange)
 
 
 #adding up the profits/losses
