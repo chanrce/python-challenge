@@ -12,6 +12,7 @@ profitlosses = []
 #sumchanges = []
 profitinc = []
 profitdec = []
+change_from_previous = []
 
 #make variables
 totalprofitlosses = 0
@@ -28,6 +29,9 @@ with open(budget_data) as csvfile:
         profitlosses.append(row[1])
         totalprofitlosses += int(row[1])
 
+        nrevenue = next(int(row[1]))
+        print(nrevenue)
+        
 
         #changes = round(int(row[1])-int(next(csvreader[1]))
         #sumchanges += int(changes)
@@ -45,7 +49,7 @@ with open(budget_data) as csvfile:
 print(str(len(months)))
 print(totalprofitlosses)
 
-#print(sumchanges/85)
+
 
 #adding up the profits/losses
 
