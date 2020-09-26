@@ -29,11 +29,11 @@ with open(budget_data) as csvfile:
         profitlosses.append(row[1])
         totalprofitlosses += int(row[1])
 
-        nrevenue = next(int(row[1]))
-        print(nrevenue)
+        #nrevenue = next(int(row[1]))
+        #print(nrevenue)
         
-
-        #changes = round(int(row[1])-int(next(csvreader[1]))
+        #changes = (int[profitlosses(row[1])]-int([profitlosses(next(row[1]))))
+        #changes = round(int(row[1])-int(next(row[1]))
         #sumchanges += int(changes)
 
        # subscribers.append(row[5])

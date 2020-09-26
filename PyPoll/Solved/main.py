@@ -16,5 +16,4 @@ with open(election_data) as csvfile:
         voterid.append(row[0])
 
 
-#prints total number of votes cast
 print(str(len(voterid)))
