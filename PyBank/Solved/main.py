@@ -8,12 +8,15 @@ budget_data = os.path.join("..", "Resources", "budget_data.csv")
 #Lists to store data
 months = []
 profitlosses = []
-avgchanges = []
+
+#sumchanges = []
 profitinc = []
 profitdec = []
 
 #make variables
 totalprofitlosses = 0
+
+
 
 #Open the budget data 
 with open(budget_data) as csvfile:
@@ -25,8 +28,9 @@ with open(budget_data) as csvfile:
         profitlosses.append(row[1])
         totalprofitlosses += int(row[1])
 
-        #avgchanges.append(changes)
-        #changes = round(int(row[1])-int(row[5]),2)
+
+        #changes = round(int(row[1])-int(next(csvreader[1]))
+        #sumchanges += int(changes)
 
        # subscribers.append(row[5])
         #reviews.append(row[6])
@@ -40,6 +44,8 @@ with open(budget_data) as csvfile:
 #counting number of months
 print(str(len(months)))
 print(totalprofitlosses)
+
+#print(sumchanges/85)
 
 #adding up the profits/losses
 
