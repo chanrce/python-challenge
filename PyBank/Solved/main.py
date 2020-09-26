@@ -35,8 +35,7 @@ with open(budget_data) as csvfile:
     
     avgchange = sum(change_from_previous[1:])/(len(change_from_previous)-1)
 
-        #changes = (int[profitlosses(row[1])]-int([profitlosses(next(row[1]))))
-        #changes = round(int(row[1])-int(next(row[1]))
+        
         #sumchanges += int(changes)
 
        # subscribers.append(row[5])
