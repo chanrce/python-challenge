@@ -35,13 +35,15 @@ with open(budget_data) as csvfile:
         previous = int(row[1])
         
 
-candidatedict = dict(zip(months, change_from_previous))
-#max(candidatedict(change_from_previous))
+changesdict = dict(zip(months, change_from_previous))
 
-Keymax = max(candidatedict, key=candidatedict.get) 
-print("max is: " + str(Keymax) + ":" + str(max(change_from_previous)))
+#determining max change and corresponding month/year
+profitchangesmax = max(changesdict, key=changesdict.get) 
+print("Greatest Increase in Profits: " + str(profitchangesmax) + ":" + str(max(change_from_previous)))
 
-    
+profitchangesmin = min(changesdict, key=changesdict.get) 
+print("Greatest Decrease in Profits: " + str(profitchangesmin) + ":" + str(min(change_from_previous)))
+
 #calculation of average change
 avgchange = sum(change_from_previous[1:])/(len(change_from_previous)-1)
         
