@@ -47,24 +47,13 @@ analysis= (f"Financial Analysis \n------------------------------------\nTotal Mo
 
 #printing analysis in terminal
 print(analysis)
-#print("Financial Analysis")
-#print("------------------------------------")
-#print("Total Months: " + str(len(months)))
-#print("Total: " + str(totalprofitlosses))
-#print("Average Change: " + str(avgchange))
-#print("Greatest Increase in Profits: " + str(profitchangesmax) + ":" + str(max(change_from_previous)))
-#print("Greatest Decrease in Profits: " + str(profitchangesmin) + ":" + str(min(change_from_previous)))
 
+#printing analysis into text file
+import os
 
+AnalysisPyBank = os.path.join ("..", "Analysis", "AnalysisPyBank")
 
-#outF = open("myOutFile.txt", "w")
-#outF.writelines(all_lines)
-#outF.close()
+outF = open("../analysis/AnalysisPyBank", "w")
+outF.writelines(analysis)
+outF.close()
 
-#cleaned_csv = zip(title,price,subscribers,reviews,review_percent,length)
-#output_file = os.path.join("web_final.csv")
-
-#BELOW CONVERT TO TXT FILE!!!!!!!!!!!!!
-#with open(output_file, "w") as datafile:
-    #writer = csv.writer(datafile)
-    #writer.writerow(["Title", "Course Price", "Subscribers,"Reviews Left", "Percent of Review", ])
