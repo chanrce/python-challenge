@@ -7,10 +7,6 @@ budget_data = os.path.join("..", "Resources", "budget_data.csv")
 
 #Lists to store data
 months = []
-
-
-profitinc = []
-profitdec = []
 change_from_previous = []
 
 #dictionary to store dates with corresponding changes
@@ -34,31 +30,36 @@ with open(budget_data) as csvfile:
         change_from_previous.append(change)
         previous = int(row[1])
         
-
 changesdict = dict(zip(months, change_from_previous))
 
 #determining max change and corresponding month/year
 profitchangesmax = max(changesdict, key=changesdict.get) 
-print("Greatest Increase in Profits: " + str(profitchangesmax) + ":" + str(max(change_from_previous)))
-
 profitchangesmin = min(changesdict, key=changesdict.get) 
-print("Greatest Decrease in Profits: " + str(profitchangesmin) + ":" + str(min(change_from_previous)))
+
 
 #calculation of average change
 avgchange = sum(change_from_previous[1:])/(len(change_from_previous)-1)
         
-#counting number of months
-print(str(len(months)))
 
-#printing results
-print(totalprofitlosses)
-print(avgchange)
+#printing financial analysis
+
+analysis= (f"Financial Analysis \n------------------------------------\nTotal Months: {str(len(months))} \nTotal: ${totalprofitlosses} \nAverage Change: ${avgchange} \nGreatest Increase in Profits: {profitchangesmax}: {max(change_from_previous)} \nGreatest Decrease in Profits: {profitchangesmin}: {min(change_from_previous)}")
+
+#printing analysis in terminal
+print(analysis)
+#print("Financial Analysis")
+#print("------------------------------------")
+#print("Total Months: " + str(len(months)))
+#print("Total: " + str(totalprofitlosses))
+#print("Average Change: " + str(avgchange))
+#print("Greatest Increase in Profits: " + str(profitchangesmax) + ":" + str(max(change_from_previous)))
+#print("Greatest Decrease in Profits: " + str(profitchangesmin) + ":" + str(min(change_from_previous)))
 
 
-#for range month in months 
-#if max(change_from_previous):
-#    print(month)
-#print(min(change_from_previous))
+
+#outF = open("myOutFile.txt", "w")
+#outF.writelines(all_lines)
+#outF.close()
 
 #cleaned_csv = zip(title,price,subscribers,reviews,review_percent,length)
 #output_file = os.path.join("web_final.csv")
