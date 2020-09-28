@@ -8,15 +8,12 @@ election_data = os.path.join("..", "Resources", "election_data.csv")
 #Lists to store data
 voterid = []
 candidatename =[]
-
 candidatedict = {}
-
 totalvotes = 0
-#candidates =[]
 
 with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    next(csvreader)
+    csv_header = next(csvreader)
 
     for row in csvreader:
         totalvotes=totalvotes+1
@@ -27,7 +24,6 @@ with open(election_data) as csvfile:
             candidatedict[row[2]]=0
         candidatedict[row[2]]=candidatedict[row[2]]+1
         #dictionary to store data, created from row reader
-        #candidatedict = {"county": row[1], "candidate": row[2]}
     percent_dictionary = {}
     maximumvotes = 0
     winner = ""
@@ -40,10 +36,16 @@ with open(election_data) as csvfile:
             maximumvotes = votes
             winner = x
 
+#printing analysis
+PyPollAnalysis= (f"Election Results \n------------------------------------\nTotal Votes: {str(len(voterid))} \n------------------------------------ \nTotal Votes by Candidate: \n{candidatedict} \nPercent of Votes by Candiates: \n{percent_dictionary} \n------------------------------------ \nWinner: {winner}\n------------------------------------ ")
+print(PyPollAnalysis)
 
-#prints total number of votes cast
-print(str(len(voterid)))
-print(candidatename)
-print(candidatedict)
-print(percent_dictionary)
-print(winner)
+#exporting analysis to text file
+
+import os
+
+Analysis = os.path.join ("..", "Analysis", "AnalysisPyPoll")
+
+outF = open("../analysis/Analysis", "w")
+outF.writelines(PyPollAnalysis)
+outF.close()

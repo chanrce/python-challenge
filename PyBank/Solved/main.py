@@ -20,7 +20,7 @@ previous = 0
 #Open the budget data 
 with open(budget_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    next(csvreader)
+    csv_header = next(csvreader)
 
     for row in csvreader:
         months.append(row[0])
