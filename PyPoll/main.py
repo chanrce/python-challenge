@@ -3,7 +3,7 @@ import os
 import csv
 
 #Setting the file path
-election_data = os.path.join("..", "Resources", "election_data.csv")
+election_data = os.path.join("Resources", "election_data.csv")
 
 #Lists to store data
 voterid = []
@@ -47,8 +47,8 @@ print(PyPollAnalysis)
 
 import os
 
-Analysis = os.path.join ("..", "Analysis", "AnalysisPyPoll")
+AnalysisPyPoll = os.path.join ("Analysis", "AnalysisPyPoll")
 
-outF = open("../analysis/Analysis", "w")
+outF = open("Analysis/AnalysisPyPoll", "w")
 outF.writelines(PyPollAnalysis)
 outF.close()

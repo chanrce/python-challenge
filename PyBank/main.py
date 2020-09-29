@@ -3,7 +3,7 @@ import os
 import csv
 
 #Setting the file path
-budget_data = os.path.join("..", "Resources", "budget_data.csv")
+budget_data = os.path.join("Resources", "budget_data.csv")
 
 #Lists to store data
 months = []
@@ -51,9 +51,9 @@ print(analysis)
 #printing analysis into text file
 import os
 
-AnalysisPyBank = os.path.join ("..", "Analysis", "AnalysisPyBank")
+AnalysisPyBank = os.path.join ("Analysis", "AnalysisPyBank")
 
-outF = open("../analysis/AnalysisPyBank", "w")
+outF = open("Analysis/AnalysisPyBank", "w")
 outF.writelines(analysis)
 outF.close()
 
