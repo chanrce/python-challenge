@@ -6,7 +6,6 @@ import csv
 election_data = os.path.join("Resources", "election_data.csv")
 
 #Lists to store data
-voterid = []
 candidatename =[]
 candidatedict = {}
 totalvotes = 0
@@ -19,7 +18,6 @@ with open(election_data) as csvfile:
         #Using a loop to count total votes
         totalvotes=totalvotes+1
         #Using the list candidate name and referencing it to make sure the new names are not currently in the list
-        voterid.append(row[0])
         if row[2] not in candidatename:
             candidatename.append(row[2])
             candidatedict[row[2]]=0
